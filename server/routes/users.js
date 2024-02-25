@@ -19,6 +19,7 @@ async function findUser(email){
   return await Users.findOne({email: email})
 }
 async function findUserByID(id){
+  //Usage of try-catch to avoid server crashing, if the user doesn't exist.
   try {return await Users.findById(id)}
   catch(e){
     return undefined
