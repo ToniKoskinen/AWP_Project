@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react"
-import M from "materialize-css"
+
 import Matches from "./Matches.js"
 //Credit navbar-structure: https://materializecss.com/navbar.html
 //Contents of the header are based on if user is logged in or not

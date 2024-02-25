@@ -1,5 +1,5 @@
 // This component is "card-element" that shows the description of a user
-
+// Credit: https://materializecss.com/cards.html
 const Profile = ({header,content}) => {
 
 
