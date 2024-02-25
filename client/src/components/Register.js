@@ -1,9 +1,11 @@
 // The structure of this component is based on examples of Materialize: 
 //https://materializecss.com/text-inputs.html
 
+import { useState } from "react"
+
 
 const Register = () => {
-
+    const [disabled,setDisabled]=useState(true)
     function Registerfun(e){
         e.preventDefault()
         fetch("/api/users/register", {
@@ -41,9 +43,11 @@ const Register = () => {
         document.getElementById("cpassword").value!=="" &&
         document.getElementById("cpwd-error").textContent==="" //No activation if passwords do not match
        ){
-        document.getElementById("registration").disabled=false
+        setDisabled(false)
+        //document.getElementById("registration").disabled=false
       } else {
-        document.getElementById("registration").disabled=true
+        //document.getElementById("registration").disabled=true
+        setDisabled(true)
       }
      }      
     
@@ -83,7 +87,7 @@ const Register = () => {
           </div>
           <div class="row">
           <p class="col s8 l9 grey-text right-align">All fields are required for registration</p>
-          <button id="registration" onClick={Registerfun} class="col s3 m3 l2 btn waves-effect waves-light" type="submit">Registration</button>
+          <button id="registration" disabled={disabled} onClick={Registerfun} class="col s3 m3 l2 btn waves-effect waves-light" type="submit">Registration</button>
           </div>
 
         </form>
