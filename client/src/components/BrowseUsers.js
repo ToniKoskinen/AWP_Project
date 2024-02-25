@@ -52,10 +52,7 @@ const BrowseUsers= () => {
         }
         
     }
-    function startChat(){
-        window.location.href="/profile/"+profiles[count]._id
 
-    }
     function likeAction(){
         var likeHTML='<i class="material-icons center">favorite</i>'
         M.toast({html: likeHTML})
